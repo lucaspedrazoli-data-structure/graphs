@@ -29,7 +29,7 @@ extension Graph {
     addDirectedEdge(from: destination, to: source, weight: weight)
   }
 
-  func add(_ edge: EdgeType, from source: Vertex<Element>,
+  public func add(_ edge: EdgeType, from source: Vertex<Element>,
            to destination: Vertex<Element>,
            weight: Double?) {
     switch edge {
