@@ -1,7 +1,8 @@
 // Copyright (c) 2019 Razeware LLC
 // For full license & permission details, see LICENSE.markdown.
 
-let graph = AdjacencyList<String>()
+//let graph = AdjacencyList<String>()
+let graph = AdjacencyMatrix<String>()
 let singapore = graph.createVertex(data: "Singapore")
 let tokyo = graph.createVertex(data: "Tokyo")
 let hongKong = graph.createVertex(data: "Hong Kong")
