@@ -43,7 +43,7 @@ extension Graph {
 
 extension Graph where Element: Hashable {
 
-  func breadthFirstSearch(from source: Vertex<Element>) -> [Vertex<Element>] {
+  public func breadthFirstSearch(from source: Vertex<Element>) -> [Vertex<Element>] {
     var queue = QueueStack<Vertex<Element>>()
     var enqueued: Set<Vertex<Element>> = []
     var visited: [Vertex<Element>] = []
