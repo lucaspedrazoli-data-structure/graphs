@@ -2,7 +2,7 @@ import Foundation
 
 public class AdjacencyMatrix<T>: Graph {
 
-  private var vertices: [Vertex<T>] = []
+  public var vertices: [Vertex<T>] = []
   private var weights: [[Double?]] = []
 
   public init() { }

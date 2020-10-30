@@ -4,7 +4,17 @@ public class AdjacencyList<T: Hashable>: Graph {
 
   private var adjacencies: [Vertex<T>: [Edge<T>]] = [:]
 
+  public var vertices: [Vertex<T>] {
+    Array(adjacencies.keys)
+  }
+
   public init() { }
+
+  public func copyVertices(from graph: AdjacencyList) {
+    for vertex in graph.vertices {
+      adjacencies[vertex] = []
+    }
+  }
 
   public func createVertex(data: T) -> Vertex<T> {
     let vertex = Vertex(index: adjacencies.count, data: data)

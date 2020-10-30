@@ -8,7 +8,11 @@ public enum EdgeType {
 public protocol Graph {
   associatedtype Element
 
+  var vertices: [Vertex<Element>] { get }
+
+  @discardableResult
   func createVertex(data: Element) -> Vertex<Element>
+  func addUndirectedEdge(between source: Vertex<Element>, and destination: Vertex<Element>, weight: Double?)
   func addDirectedEdge(from source: Vertex<Element>,
                        to destination: Vertex<Element>,
                        weight: Double?)
@@ -22,9 +26,9 @@ public protocol Graph {
 
 extension Graph {
 
-  public func addUnidirectedEdge(between source: Vertex<Element>,
-                                 and destination: Vertex<Element>,
-                                 weight: Double?) {
+  public func addUndirectedEdge(between source: Vertex<Element>,
+                         and destination: Vertex<Element>,
+                         weight: Double?) {
     addDirectedEdge(from: source, to: destination, weight: weight)
     addDirectedEdge(from: destination, to: source, weight: weight)
   }
@@ -36,7 +40,7 @@ extension Graph {
     case .directed:
       addDirectedEdge(from: source, to: destination, weight: weight)
     case .undirected:
-      addUnidirectedEdge(between: source, and: destination, weight: weight)
+      addUndirectedEdge(between: source, and: destination, weight: weight)
     }
   }
 }
